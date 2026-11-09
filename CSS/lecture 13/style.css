@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    border: 3px solid blue;
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: column; */
+
+    /* justify-content: center;
+    justify-self: end;
+    justify-content: start;
+    justify-content: space-around; */
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
+
+    /* align-items: center; */
+    /* align-items: end;
+       align-items: start;  */
+
+    /* align-content: center; */
+    /* align-content: space-around; */
+    /* align-content: space-between; */
+    /* align-content: space-evenly; */
+
+    gap: 10px;
+    flex-wrap: wrap;
+    /* flex-wrap: ;
+    flex-basis: ;
+    flex-shrink: ;
+    flex-grow: ; */
+    /* flex: initial;
+    flex: auto; */
+    padding-left: 40px;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background-color: chocolate;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-grow: 1; */
+    /* flex-shrink: 0; */
+     /* flex-basis: 0; */
+     flex: 1;
+} 
+
+.meterial {
+    /* align-self: center; */
+    /* align-self: flex-end; */
+    align-self: flex-start;
+}
+
+#cart2 {
+    align-self: flex-start;
+    /* flex-grow: 1; */
+
+}
+
+#cart3 {
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+}

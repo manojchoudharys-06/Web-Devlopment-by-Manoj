@@ -1,0 +1,32 @@
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+npm install tailwindcss @tailwindcss/cli
+
+@import "tailwindcss";
+
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+
+@theme {
+  --color-regal-blue: #243c5a; 
+}
+
+,
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./input.css -o ./output.css --watch"
+  }
+
+
+  …or create a new repository on the command line
+echo "# First-html-Portfolio" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:manojchoudhary9111-ai/First-html-Portfolio.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin git@github.com:manojchoudhary9111-ai/First-html-Portfolio.git
+git branch -M main
+git push -u origin main

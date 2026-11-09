@@ -1,0 +1,86 @@
+#alok {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#rake {
+    font-family: "Sekuya";
+}
+
+.sekuya-regular {
+    font-family: "Sekuya", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#sat {
+    font-size: 50px;
+}
+
+p {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+#neel {
+    font-style: italic;
+    font-variant: small-caps;
+}
+
+em {
+    font-style: normal;
+}
+
+#lorem {
+    line-height: 2;
+    letter-spacing: 6px;
+    word-spacing: 20px;
+}
+
+#vik {
+    text-align: end;
+    border: 1px solid red;
+}
+
+#nilesh {
+    text-align: center;
+    border: 1px solid red;
+    display: block;
+}
+
+#nia {
+    text-decoration: underline dotted;
+    text-decoration: line-through;
+    text-decoration: overline;
+    text-decoration: underline wavy;
+}
+
+#lotus {
+    text-transform: capitalize;
+    text-transform: lowercase;
+    text-transform: uppercase;
+}
+
+#mor {
+    text-indent: 100px;
+}
+
+#diary {
+    font-size: 24px;
+    text-shadow: 5px 3px 1px red;
+}
+
+#neelkamal {
+    font-size: 24px;
+    text-shadow: -5px -3px 1px red;
+}
+
+#color{
+    /* color: brown;
+    color: #ff0066fe;
+    color: rgb(217, 0, 255);
+    color: rgba(64, 0, 255, 0.068); */
+    color: hsl(360, 100%, 50%);
+      color: hsla(360, 100%, 50%, 0.5);
+      background: rgb(146, 74, 74);
+}
+  

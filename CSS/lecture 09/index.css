@@ -1,0 +1,87 @@
+ *{
+    color: rgb(88, 114, 114);
+ }
+ span { 
+     color: rgb(242, 78, 7);
+ }
+
+ h3 {
+     color: aqua;
+ }
+ 
+ .rakhi{
+    color: red;
+ }
+ /* a{
+    color: rgb(143, 61, 220);
+ } */
+
+ /* a, li{
+    color: rgb(249, 135, 5);
+ } */
+  
+ .hello {
+    color: rgb(249, 5, 94);
+ }
+ .hello2 {
+    color: rgb(249, 5, 94);  ;background-color: coral;
+ }
+ 
+ #nihal{
+    color: saddlebrown;
+}
+
+ #nihala{
+    color: saddlebrown; background-color: chartreuse;
+}
+
+#bhayan{
+ color: mediumslateblue;   
+}                                                                                           
+ div p{
+   color: rgb(252, 2, 152);
+ } 
+ div > p{
+   color: rgb(114, 2, 252);
+ } 
+
+ a+p{
+   color: black;
+ }
+ a~p{
+   color: rgb(251, 7, 7);
+ } 
+
+ /* h1:hover{  
+   background-color:dodgerblue 
+}  */
+
+/* li:hover{
+   background-color: blue;
+} */
+
+/* li:first-child{
+   color: rgb(117, 244, 6);
+}
+
+li:last-child{
+   color: blueviolet;
+} */
+li:nth-child(2n+3){
+ color:dodgerblue
+}
+
+h1::before{
+   content:"Hii " ;
+}
+h1::after{
+   content:" jii" ;
+}
+
+h1::first-letter {
+   color: rgb(246, 4, 8);
+}
+h1::selection {
+   color: rgb(4, 246, 93);
+   background-color: black
+}

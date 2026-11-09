@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.box {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color: aquamarine;
+    transition-duration: 2s;
+    transition-property: all;
+    /* transition-timing-function: ease-out; */
+    /*    */
+    /* transition-delay: 2s; */
+    /* transition:all 5s linear 0s; */
+    /* transform: translateX(100px);
+    transform: translateY(100px); */
+    /* transform: translate(100px, 100px); */
+    /* transform: scaleY(2); */
+    /* transform: translate(100px, 100px) scaleX(2); */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode;
+    ; */
+    /* animation-name: sneha; */
+    animation-name: dhruv;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    position: absolute;
+
+}
+
+@keyframes sneha {
+    from {
+        background-color: red;
+        /* transform: translate(30px 50px);} */
+    }
+
+    to {
+        background-color: green;
+        transform: translate(30px);
+    }
+}
+
+
+@keyframes dhruv {
+    0% {
+        background-color: red;
+        left: 0%;
+    }
+
+    25% {
+        /* width: 1000px; */
+        background-color: pink;
+    }
+
+    75% {
+        /* width: 500px; */
+        background-color: yellow;
+    }
+
+    100% {
+        /* width: 700px; */
+        background-color: green;
+        /* transform: translate(30px, 50px); */
+        left: 100%;
+    }
+}
+
+.box:hover {
+    background-color: purple;
+    /* width: 1300px; */
+    /* transform: translate(100px, 100px); */
+    /* transform: translate(100px, 100px); */
+    /* transform: scaleX(2); */
+}
+
+#color-wrapper:hover>div {
+    /* width: 1300px; */
+    /* background-color: purple;*/
+    /* transform: translate(300px, 300px); */
+    /* transform: scaleX(2); */
+}
+
+.linear {
+    /* transition-timing-function: linear;
+    background-color: blue; */
+}
+
+.ease {
+    transition-timing-function: ease;
+    background-color: green;
+}
+
+.ease-in {
+    transition-timing-function: ease-in;
+    background-color: orange;
+}
+
+.ease-out {
+    transition-timing-function: ease-out;
+    background-color: pink;
+}
+
+.ease-in-out {
+    transition-timing-function: ease-in-out;
+    background-color: red;
+}
+
+.btn {
+    background-color: cornflowerblue;
+    padding: 20px 30px;
+    border-radius: 30px;
+    border: none;
+    margin: 50px;
+    cursor: pointer;
+    transition-duration: 0.6s;
+    /* transition: skewX(40deg);
+    transition: skewY(40deg); */
+
+    /* animation: nia 2s linear 0s infinite alternate; */
+    animation: nia 2s linear 0s infinite;
+}
+
+@keyframes nia {
+    from {
+        /* transform: rotate(0deg); */
+    }
+
+    to {
+        /* transform: translate(0, -5px) scale(1.1) rotate(-3deg); */
+        transform: rotate(360deg);
+    }
+}
+
+.btn:hover {
+    /* transform: translate(0, -5px) scale(1.1) rotate(350deg) skewX(40deg);
+    /* transform: rotate(20deg); */
+    /* box-shadow: 10px 10px 10px rgb(97, 54, 97); */
+}

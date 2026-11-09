@@ -1,0 +1,6 @@
+@import "tailwindcss";
+/*node_modules*/
+
+@theme {
+  --color-brand: #52355242; 
+}

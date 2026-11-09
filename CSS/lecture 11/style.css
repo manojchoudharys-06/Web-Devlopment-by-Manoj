@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ h1 {
+      /* background-color: brown; */
+      font-size: 100px;
+      /* box-sizing: content-box; */
+    border: 5px solid black;
+    padding: 40px;
+    margin-bottom: 10px;
+    width: 500px;
+    margin: auto;
+    }
+#wrapper {
+    /* background: linear-gradient(to top, red, blue);
+
+     background: linear-gradient(45deg, red, blue, yellow, pink, green); 
+
+      background: radial-gradient(circle, red ,green);
+ 
+     background: conic-gradient(red ,blue ,yellow) ;
+
+     border: 10px solid black;
+     background-image: url(image.png);
+     background-repeat: no-repeat;
+     background-position: top;
+     background-size: contain; */
+
+
+    /* border-width: ;
+     border-style: ;
+     border-color: ; */
+
+    /* border: 20px solid navy; */
+
+    border: 11px solid blueviolet;
+    border-radius: 10px;
+    /* border-top-left-radius: 0; */
+
+    padding: 230px;
+    height: 1000px;
+    width: 1000px;
+    margin: 40px;
+    box-sizing: content-box;
+}
+
+p {
+    /* padding: 40px; */
+    /* padding-top: 70px; */
+    /* padding-bottom: 40px;
+      padding-left: 20px; */
+    /* padding: top right bottom left; */
+    /* border: 1px solid red; */
+    padding: 40px 40px 40px 40px;
+    /* padding: 40px 0 10px; */
+}
+
+.red-border {
+    border: 3px solid red;
+}
+
+#varsha {
+    /* border: 1px solid red; */
+    margin: auto;
+    text-align: center;
+}
+
+#sweeti {
+    /* border: 1px solid blue; */
+    width: 100px;
+    margin: auto;
+}
+
+span {
+    display: inline-block;
+    /* padding: 40px;
+    margin: 40px; */
+    /* background-color: rgb(157, 92, 92); */
+    /* margin: auto; */
+    width: 50px;
+    height: 50px;
+}
+
+#nonu {
+    /* padding: 40px; */
+    border: 3px solid black;
+}

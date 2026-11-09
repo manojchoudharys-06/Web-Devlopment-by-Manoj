@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Periodic Table</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:25px;
+    font-family:Arial, sans-serif;
+    background:#fff;
+}
+
+.table{
+    width:1200px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(18,1fr);
+    gap:2px;
+}
+
+.element{
+    height:64px;
+    border:1px solid #777;
+    text-align:center;
+    position:relative;
+    padding-top:15px;
+}
+
+.num{
+    position:absolute;
+    top:2px;
+    left:3px;
+    font-size:9px;
+}
+
+.symbol{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.name{
+    font-size:7px;
+    margin-top:2px;
+}
+
+.electron{
+    font-size:7px;
+    margin-top:2px;
+}
+
+/* Colours */
+.s{
+    background:#cfeef2;
+}
+
+.p{
+    background:#f4e8a8;
+}
+
+.d{
+    background:#f4c99c;
+}
+
+.noble{
+    background:#f4b4c0;
+}
+
+.f{
+    background:#d9b9e8;
+}
+
+.meta{
+    background:#cfe4c3;
+}
+
+/* Empty boxes */
+.empty{
+    border:0;
+}
+
+/* Headings */
+.group{
+    text-align:center;
+    font-size:10px;
+    font-weight:bold;
+    margin-bottom:3px;
+}
+
+.labels{
+    display:grid;
+    grid-template-columns:repeat(18,1fr);
+    margin-bottom:3px;
+}
+
+.series{
+    margin-top:25px;
+}
+
+.series-title{
+    text-align:center;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.fgrid{
+    display:grid;
+    grid-template-columns:repeat(15,1fr);
+    gap:2px;
+    width:83.3%;
+    margin-left:16.7%;
+}
+
+.fgrid .element{
+    height:52px;
+}
+
+.fgrid .symbol{
+    font-size:14px;
+}
+
+.fgrid .name{
+    font-size:6px;
+}
+
+.period-label{
+    position:absolute;
+    left:-20px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+/* Make it scrollable on small screen */
+.wrapper{
+    overflow-x:auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="table">
+
+<div class="title">
+    PERIODIC TABLE OF ELEMENTS
+</div>
+
+<!-- GROUP NUMBERS -->
+<div class="labels">
+    <div class="group">1</div>
+    <div class="group">2</div>
+    <div class="group">3</div>
+    <div class="group">4</div>
+    <div class="group">5</div>
+    <div class="group">6</div>
+    <div class="group">7</div>
+    <div class="group">8</div>
+    <div class="group">9</div>
+    <div class="group">10</div>
+    <div class="group">11</div>
+    <div class="group">12</div>
+    <div class="group">13</div>
+    <div class="group">14</div>
+    <div class="group">15</div>
+    <div class="group">16</div>
+    <div class="group">17</div>
+    <div class="group">18</div>
+</div>
+
+<div class="grid" id="periodicTable"></div>
+
+<!-- F BLOCK -->
+<div class="series">
+
+    <div class="series-title">
+        f – Inner transition elements
+    </div>
+
+    <div class="fgrid" id="lanthanides"></div>
+
+    <br>
+
+    <div class="fgrid" id="actinides"></div>
+
+</div>
+
+</div>
+</div>
+
+
+<script>
+
+const elements = [
+
+/* 1 */
+["H","Hydrogen",1,"s",1,1],
+["He","Helium",2,"noble",1,18],
+
+/* 2 */
+["Li","Lithium",3,"s",2,1],
+["Be","Beryllium",4,"meta",2,2],
+["B","Boron",5,"p",2,13],
+["C","Carbon",6,"p",2,14],
+["N","Nitrogen",7,"p",2,15],
+["O","Oxygen",8,"p",2,16],
+["F","Fluorine",9,"p",2,17],
+["Ne","Neon",10,"noble",2,18],
+
+/* 3 */
+["Na","Sodium",11,"s",3,1],
+["Mg","Magnesium",12,"meta",3,2],
+["Al","Aluminium",13,"p",3,13],
+["Si","Silicon",14,"p",3,14],
+["P","Phosphorus",15,"p",3,15],
+["S","Sulfur",16,"p",3,16],
+["Cl","Chlorine",17,"p",3,17],
+["Ar","Argon",18,"noble",3,18],
+
+/* 4 */
+["K","Potassium",19,"s",4,1],
+["Ca","Calcium",20,"meta",4,2],
+["Sc","Scandium",21,"d",4,3],
+["Ti","Titanium",22,"d",4,4],
+["V","Vanadium",23,"d",4,5],
+["Cr","Chromium",24,"d",4,6],
+["Mn","Manganese",25,"d",4,7],
+["Fe","Iron",26,"d",4,8],
+["Co","Cobalt",27,"d",4,9],
+["Ni","Nickel",28,"d",4,10],
+["Cu","Copper",29,"d",4,11],
+["Zn","Zinc",30,"d",4,12],
+["Ga","Gallium",31,"p",4,13],
+["Ge","Germanium",32,"p",4,14],
+["As","Arsenic",33,"p",4,15],
+["Se","Selenium",34,"p",4,16],
+["Br","Bromine",35,"p",4,17],
+["Kr","Krypton",36,"noble",4,18],
+
+/* 5 */
+["Rb","Rubidium",37,"s",5,1],
+["Sr","Strontium",38,"meta",5,2],
+["Y","Yttrium",39,"d",5,3],
+["Zr","Zirconium",40,"d",5,4],
+["Nb","Niobium",41,"d",5,5],
+["Mo","Molybdenum",42,"d",5,6],
+["Tc","Technetium",43,"d",5,7],
+["Ru","Ruthenium",44,"d",5,8],
+["Rh","Rhodium",45,"d",5,9],
+["Pd","Palladium",46,"d",5,10],
+["Ag","Silver",47,"d",5,11],
+["Cd","Cadmium",48,"d",5,12],
+["In","Indium",49,"p",5,13],
+["Sn","Tin",50,"p",5,14],
+["Sb","Antimony",51,"p",5,15],
+["Te","Tellurium",52,"p",5,16],
+["I","Iodine",53,"p",5,17],
+["Xe","Xenon",54,"noble",5,18],
+
+/* 6 */
+["Cs","Caesium",55,"s",6,1],
+["Ba","Barium",56,"meta",6,2],
+["La","Lanthanum",57,"f",6,3],
+["Hf","Hafnium",72,"d",6,4],
+["Ta","Tantalum",73,"d",6,5],
+["W","Tungsten",74,"d",6,6],
+["Re","Rhenium",75,"d",6,7],
+["Os","Osmium",76,"d",6,8],
+["Ir","Iridium",77,"d",6,9],
+["Pt","Platinum",78,"d",6,10],
+["Au","Gold",79,"d",6,11],
+["Hg","Mercury",80,"d",6,12],
+["Tl","Thallium",81,"p",6,13],
+["Pb","Lead",82,"p",6,14],
+["Bi","Bismuth",83,"p",6,15],
+["Po","Polonium",84,"p",6,16],
+["At","Astatine",85,"p",6,17],
+["Rn","Radon",86,"noble",6,18],
+
+/* 7 */
+["Fr","Francium",87,"s",7,1],
+["Ra","Radium",88,"meta",7,2],
+["Ac","Actinium",89,"f",7,3],
+["Rf","Rutherfordium",104,"d",7,4],
+["Db","Dubnium",105,"d",7,5],
+["Sg","Seaborgium",106,"d",7,6],
+["Bh","Bohrium",107,"d",7,7],
+["Hs","Hassium",108,"d",7,8],
+["Mt","Meitnerium",109,"d",7,9],
+["Ds","Darmstadtium",110,"d",7,10],
+["Rg","Roentgenium",111,"d",7,11],
+["Cn","Copernicium",112,"d",7,12],
+["Nh","Nihonium",113,"p",7,13],
+["Fl","Flerovium",114,"p",7,14],
+["Mc","Moscovium",115,"p",7,15],
+["Lv","Livermorium",116,"p",7,16],
+["Ts","Tennessine",117,"p",7,17],
+["Og","Oganesson",118,"noble",7,18]
+];
+
+
+/* Create main table */
+
+const table = document.getElementById("periodicTable");
+
+elements.forEach(e => {
+
+    const box = document.createElement("div");
+
+    box.className = "element " + e[3];
+
+    box.style.gridColumn = e[5];
+    box.style.gridRow = e[4];
+
+    box.innerHTML = `
+        <span class="num">${e[2]}</span>
+        <div class="symbol">${e[0]}</div>
+        <div class="name">${e[1]}</div>
+    `;
+
+    table.appendChild(box);
+});
+
+
+/* Lanthanides */
+
+const lanthanides = [
+["Ce","Cerium",58],
+["Pr","Praseodymium",59],
+["Nd","Neodymium",60],
+["Pm","Promethium",61],
+["Sm","Samarium",62],
+["Eu","Europium",63],
+["Gd","Gadolinium",64],
+["Tb","Terbium",65],
+["Dy","Dysprosium",66],
+["Ho","Holmium",67],
+["Er","Erbium",68],
+["Tm","Thulium",69],
+["Yb","Ytterbium",70],
+["Lu","Lutetium",71]
+];
+
+const lanth = document.getElementById("lanthanides");
+
+lanthanides.forEach(e => {
+
+    lanth.innerHTML += `
+        <div class="element f">
+            <span class="num">${e[2]}</span>
+            <div class="symbol">${e[0]}</div>
+            <div class="name">${e[1]}</div>
+        </div>
+    `;
+
+});
+
+
+/* Actinides */
+
+const actinides = [
+["Th","Thorium",90],
+["Pa","Protactinium",91],
+["U","Uranium",92],
+["Np","Neptunium",93],
+["Pu","Plutonium",94],
+["Am","Americium",95],
+["Cm","Curium",96],
+["Bk","Berkelium",97],
+["Cf","Californium",98],
+["Es","Einsteinium",99],
+["Fm","Fermium",100],
+["Md","Mendelevium",101],
+["No","Nobelium",102],
+["Lr","Lawrencium",103]
+];
+
+const act = document.getElementById("actinides");
+
+actinides.forEach(e => {
+
+    act.innerHTML += `
+        <div class="element f">
+            <span class="num">${e[2]}</span>
+            <div class="symbol">${e[0]}</div>
+            <div class="name">${e[1]}</div>
+        </div>
+    `;
+
+});
+
+</script>
+
+</body>
+</html>
