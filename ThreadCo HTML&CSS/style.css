@@ -579,7 +579,7 @@ tr:hover td:first-child {
     font-family: var(--font-display);
     margin-bottom: 10px;
     font-size: 1.2rem;
-}
+} 
 
 #why-threadco dl {
     margin: 10px;
@@ -654,7 +654,7 @@ tr:hover td:first-child {
     border: none;
     outline: none;
     color: white;
-     border-radius: var(--shadow-lg);
+    border-radius: var(--shadow-lg);
     font-family: var(--font-body);
     font-size: 1.2rem;
     background-color: rgba(50, 50, 50, 0.305);
@@ -954,11 +954,14 @@ footer p a:hover {
         overflow-x: auto;
         /* scrollbar-width: none; */
     }
-    #product-layout{display: flex;
+
+    #product-layout {
+        display: flex;
         flex-direction: column;
 
     }
-    #sidebar{
+
+    #sidebar {
         position: static;
         width: 100%;
     }
@@ -984,4 +987,299 @@ footer p a:hover {
     body {
         padding: 0px;
     }
+}
+
+
+/* product.html */
+
+nav [aria-label="breadcrumb"] {
+    padding: 15px 30px;
+    display: inline-block;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: 8rem;
+}
+
+nav [aria-label="breadcrumb"] a {
+    display: inline-block;
+    padding: 0px 3px;
+    color: var(--color-primary);
+
+}
+
+nav [aria-label="breadcrumb"] a:hover {
+    color: var(--color-secondary);
+}
+
+#product-detail {
+    display: flex;
+    padding: 40px 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+#product-detail figure {
+    flex: 0 0 50%;
+}
+
+#product-detail div {
+    flex: 1;
+}
+
+.product-detail-left h2 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.product-detail-left p {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+
+.product-detail-left mark {
+    background: var(--gradient-accent);
+    padding: 8px 16px;
+    border-radius: var(--radius-lg);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-weight: 600;
+    top: 4%;
+    right: 7%;
+    font-size: 0.8rem;
+}
+
+.product-detail-left p:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.product-detail-left p:nth-of-type(2) strong {
+    font-size: 2.5rem;
+    font-family: var(--font-display);
+}
+
+.product-detail-left label {
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    font-family: var(--font-display);
+    letter-spacing: 0.1rem;
+    font-size: 0.9rem;
+}
+
+.product-detail-left input[type="number"],
+.product-detail-left select {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--color-border);
+    outline: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    color: white;
+    border-radius: var(--radius-sm);
+}
+
+.product-detail-left input[type="number"]:focus,
+.product-detail-left select:focus {
+    border-color: var(--color-primary);
+}
+
+.product-detail-left a {
+    margin-left: 10px;
+    font-family: var(--font-body);
+    text-decoration: underline;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    text-underline-offset: 4px;
+}
+
+.product-detail-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-detail-btns button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-family: var(--font-display);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: white;
+    font-weight: 500;
+}
+
+.product-detail-btns button:first-child {
+    flex: 1.5rem;
+    background: var(--gradient-accent);
+}
+
+.product-detail-btns button:nth-of-type(2) {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.product-detail-btns button:nth-of-type(2):hover {
+    background-color: white;
+    color: black;
+}
+
+.product-detail-left ul {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+}
+
+.product-detail-left ul li {
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+}
+
+#size-chart {
+    padding: 70px;
+    background-color: var(--color-bg-section);
+
+
+}
+
+#size-chart h2 {
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+#size-chart p {
+    font-family: var(--font-body);
+
+}
+
+#size-chart caption {
+    color: var(--color-text-muted);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+
+}
+
+#size-chart table tr:first-child th {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#size-chart table tr th,
+#size-chart table tr td {
+    background-color: #11141B;
+}
+
+#size-chart table tr:hover th,
+#size-chart table tr:hover td {
+    background-color: #11141b81;
+}
+
+#product-details {
+    color: white;
+    padding: 50px 40px;
+}
+
+#product-details dl {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#product-details dl div {
+    display: flex;
+    border-top: 1px solid var(--color-border);
+    width: 100%;
+    max-width: 800px;
+    gap: 10px;
+    padding: 8px 0;
+    margin-top: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#product-details dl div dt {
+    flex: 1 1 100px;
+    color: var(--color-text-muted);
+    font-family: var(--font-display);
+}
+
+#product-details dl div dd {
+    flex: 2;
+    font-family: var(--font-body);
+}
+
+.customer-reviews {
+    background-color: var(--color-bg-section);
+    padding: 80px 40px;
+}
+
+.customer-reviews h2 {
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+
+.customer-reviews p {
+    font-family: var(--font-body);
+    color: white;
+    font-size: 1.1rem;
+}
+
+
+.customer-reviews-details {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.customer-reviews-details article {
+    flex: 1;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 30px;
+}
+
+.customer-reviews-details article p:first-of-type {
+    color: #F59E0D;
+}
+
+.might-also-like {
+    padding: 40px 30px;
+}
+
+.might-also-like h3 {
+    padding: 30px 0;
+}
+
+.also-like-items {
+    display: flex;
+    gap: 10px;
+}
+
+.also-like-items article {
+    flex: 1;
+    border: 1px solid var(--color-border);
+    padding: 10px;
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface);
+}
+
+.also-like-items article figure {
+    aspect-ratio: 1;
 }

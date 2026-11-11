@@ -66,7 +66,8 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(2rem, 6vw, 5rem);
+    /* font-size: clamp(1.8rem, 4vw, 3rem); */
 }
 
 h3 {
@@ -110,10 +111,10 @@ a {
 
 body {
     background-color: var(--color-bg-base);
-    padding: 0 50px;
+    /* padding: 0 50px; */
+    padding-bottom: clamp(20px, 3vw, 40px);
     opacity: 1;
 }
-
 
 #catalogue {
     padding: 120px 48px;
@@ -121,7 +122,7 @@ body {
 
 #catalogue h2 {
     text-transform: uppercase;
-    font-family: 4rem;
+    /* font-size: 4rem; */
     padding-bottom: 20px;
 }
 
@@ -246,7 +247,7 @@ body {
 #products h2 {
     text-transform: uppercase;
     color: var(color);
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
     padding-bottom: 20px;
 
 }
@@ -277,9 +278,93 @@ body {
 .compare-best-sellers table tr:nth-of-type(2) th {
     color: var(--white);
 }
-.compare-best-sellers table tr th{
+
+.compare-best-sellers table tr th {
     color: var(--color-accent);
 }
-.compare-best-sellers table tr{
+
+.compare-best-sellers table tr {
     border: 1px solid var(--color-border);
+}
+
+
+@media (max-width:1200px) {
+    header {
+        left: 0px;
+        right: 0px;
+    }
+
+    #hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-hero {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width:992px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header nav a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width:768px) {
+    header {
+        position: static;
+    }
+
+    main {
+        padding-top: 0px;
+    }
+
+    .best-sellers {
+        padding: 60px 10px;
+    }
+
+    .table-scroll {
+        overflow-x: auto;
+        /* scrollbar-width: none; */
+    }
+
+    #product-layout {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    #sidebar {
+        position: static;
+        width: 100%;
+    }
+}
+
+@media (max-width:480px) {
+    header {
+        padding: 20px 15px;
+    }
+
+    #cta {
+        flex-direction: column;
+    }
+
+    #get-early form {
+        flex-direction: column;
+    }
+
+    #week-drop {
+        padding: 40px 0px;
+    }
+
+    body {
+        padding: 0px;
+    }
 }
